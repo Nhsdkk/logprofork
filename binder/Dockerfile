@@ -1,9 +1,9 @@
 FROM swipl:latest
 RUN apt-get update && apt-get install -y python3 python3-pip wget
-RUN pip3 install --no-cache notebook
+RUN pip3 install --no-cache notebook --break-system-packages
 
 USER root
-RUN python3 -m pip install --upgrade jswipl
+RUN python3 -m pip install --upgrade jswipl --break-system-packages
 
 ### create user with a home directory
 ARG NB_USER=buser
